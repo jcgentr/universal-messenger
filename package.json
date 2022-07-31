@@ -1,0 +1,19 @@
+{
+  "name": "universal-messenger",
+  "version": "1.0.0",
+  "description": "An anonymous chat application for people around the world.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon -e html,js app.js",
+    "start": "node app.js"
+  },
+  "author": "Jared Gentry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
