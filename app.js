@@ -26,5 +26,6 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => {
+  console.log("Env: ", process.env.NODE_ENV);
   console.log(`App listening at http://localhost:${port}/`);
 });

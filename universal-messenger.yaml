@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: universal-messenger-service
+  labels:
+    app: universal-messenger
+spec:
+  selector:
+    app: universal-messenger
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 3000 # container port
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: universal-messenger
+  labels:
+    app: universal-messenger
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: universal-messenger
+  template: # pod template
+    metadata:
+      labels:
+        app: universal-messenger
+    spec:
+      containers:
+        - name: universal-messenger
+          image: jcgentr/universal-messenger
+          ports:
+            - containerPort: 3000
